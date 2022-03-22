@@ -16,7 +16,7 @@ codegen/
 ### Simulink  ###
 slprj/
 sccprj/
-*.bak # També vàlid per Minitab
+*.bak
 *.autosave
 *.slxc
 
