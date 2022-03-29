@@ -5,35 +5,42 @@ Anàlisi de la planta de pràctiques de DS i CA.
 [Memòria a Overleaf](https://www.overleaf.com/read/yvxmjhnzsfbc) (Només lectura)
 
 ## Tests i Punts pendents d'aprofundir-hi
+### Dinàmica de Sistemes
 1. [x] Mirar pràctiques de DS
-
+	
 2. [x] Mirar descompensació de Masses
 	- [x] Tornar a mirar amb el controlador i la planta alimentats en sèrie
 	
 3. [x] Mirar zona morta del motor
-
+	
 4. [x]Buscar els paràmetres empíricament
 	- [x] Tacòmetre
 	- [x] Potenciòmetre
 	- [x] Motor
 	
 5. [x] Analitzar la qualitat del ADC de l'arduino
-6. [ ] Comparar amb els dispositius antics
-	- Planta nova vs antiga
-	- Arduino vs targeta d'adquisició
 	
-7. [ ] Identificar el derivador
+6. [ ] Comparar amb els dispositius antics
+	- [ ] Planta nova vs antiga
+	- [ ] Arduino vs targeta d'adquisició
+	
+7. [ ] Identificar el filtre
+	- [x] Bode empíric
+	- [ ] Teòric a partir del model elèctric
+	
+8. [ ] Identificar el derivador
 	- [ ] Bode empíric
 	- [ ] Teòric a partir del model elèctric
 	
-8. [ ] Mirar el model de la planta utilitzat a l'app
-
-9. [ ] Identificar els pols del sistema real
+9. [ ] Mirar el model de la planta utilitzat a l'app
+	
+10. [ ] Identificar els pols del sistema real
 	- Freq. pròpia
 	- Sobrepuig
 	- Temps d'establiment (Envolvent 98% VF)
 
-10. [ ] Identificar problemes en les pràctiques de CA
+### Control Automàtic
+1. [ ] Identificar problemes en les pràctiques de CA
 	- Preguntar al professor de laboratori
 
 ## Problemes base:
@@ -47,3 +54,4 @@ Anàlisi de la planta de pràctiques de DS i CA.
 
 1. DS | En els moviments sobtats (Per exm: Canvi de posició objectiu) les masses del motor i del controlador es descompensen.
 2. DS | Control de posició (constant) amb consigna 2V amb controlador P, si es destorba manualment, presenta histeresi en tots dos sentits (0,5V per sobre i 0,35V per sota)
+3. DS | (Cal aprofundir-hi) El filtre introdueix un desfasament
