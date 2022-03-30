@@ -29,7 +29,7 @@ Anàlisi de la planta de pràctiques de DS i CA.
 	- [ ] Teòric a partir del model elèctric
 	
 8. [ ] Identificar el derivador
-	- [ ] Bode empíric
+	- [x] Bode empíric
 	- [ ] Teòric a partir del model elèctric
 	
 9. [ ] Mirar el model de la planta utilitzat a l'app
