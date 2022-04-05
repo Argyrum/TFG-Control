@@ -13,7 +13,7 @@ Anàlisi de la planta de pràctiques de DS i CA.
 	
 3. [x] Mirar zona morta del motor
 	
-4. [x]Buscar els paràmetres empíricament
+4. [x] Buscar els paràmetres empíricament
 	- [x] Tacòmetre
 	- [x] Potenciòmetre
 	- [x] Motor
@@ -24,13 +24,13 @@ Anàlisi de la planta de pràctiques de DS i CA.
 	- [ ] Planta nova vs antiga
 	- [ ] Arduino vs targeta d'adquisició
 	
-7. [ ] Identificar el filtre
+7. [x] Identificar el filtre
 	- [x] Bode empíric
-	- [ ] Teòric a partir del model elèctric
+	- [x] Teòric a partir del model elèctric
 	
-8. [ ] Identificar el derivador
+8. [x] Identificar el derivador
 	- [x] Bode empíric
-	- [ ] Teòric a partir del model elèctric
+	- [x] Teòric a partir del model elèctric
 	
 9. [ ] Mirar el model de la planta utilitzat a l'app
 	
@@ -55,3 +55,4 @@ Anàlisi de la planta de pràctiques de DS i CA.
 1. DS | En els moviments sobtats (Per exm: Canvi de posició objectiu) les masses del motor i del controlador es descompensen.
 2. DS | Control de posició (constant) amb consigna 2V amb controlador P, si es destorba manualment, presenta histeresi en tots dos sentits (0,5V per sobre i 0,35V per sota)
 3. DS | (Cal aprofundir-hi) El filtre introdueix un desfasament
+4. DS | Nota: El guany del derivador és molt petit a la zona de treball, possible motiu del soroll desproporcionat
