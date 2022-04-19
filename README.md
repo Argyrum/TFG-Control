@@ -38,6 +38,12 @@ Anàlisi de la planta de pràctiques de DS i CA.
 	- Freq. pròpia
 	- Sobrepuig
 	- Temps d'establiment (Envolvent 98% VF)
+	
+11. [ ] Buscar solució a la zona morta
+	- Control PWM
+	- Histerèsis / SMC
+	
+12. [ ] Buscar solució al derivador
 
 ### Control Automàtic
 1. [ ] Identificar problemes en les pràctiques de CA
@@ -56,3 +62,4 @@ Anàlisi de la planta de pràctiques de DS i CA.
 2. DS | Control de posició (constant) amb consigna 2V amb controlador P, si es destorba manualment, presenta histeresi en tots dos sentits (0,5V per sobre i 0,35V per sota)
 3. DS | (Cal aprofundir-hi) El filtre introdueix un desfasament
 4. DS | Nota: El guany del derivador és molt petit a la zona de treball, possible motiu del soroll desproporcionat
+4. DS | Els BJT del sistema (TIP 121, 126) no són adients per al control PWM, tenen característiques pobres a f>10. (BJT -> IGBT?)
