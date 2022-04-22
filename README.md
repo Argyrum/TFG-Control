@@ -40,8 +40,12 @@ Anàlisi de la planta de pràctiques de DS i CA.
 	- Temps d'establiment (Envolvent 98% VF)
 	
 11. [ ] Buscar solució a la zona morta
-	- Control PWM
-	- Histerèsis / SMC
+	- ~~Control PWM en software~~
+	- ~~Histerèsis / SMC~~
+	- Control PWM en hardware (Veure més a baix)
+		- 11.2 [ ] Triar xip
+		- 11.3 [ ] Dissenyar circuit
+		- 11.4 [ ] Verificar
 	
 12. [ ] Buscar solució al derivador
 
@@ -63,3 +67,24 @@ Anàlisi de la planta de pràctiques de DS i CA.
 3. DS | (Cal aprofundir-hi) El filtre introdueix un desfasament
 4. DS | Nota: El guany del derivador és molt petit a la zona de treball, possible motiu del soroll desproporcionat
 4. DS | Els BJT del sistema (TIP 121, 126) no són adients per al control PWM, tenen característiques pobres a f>10. (BJT -> IGBT?)
+
+## Idees per al control PWM
+#### Senyal analògic a PWM amb control de direcció
+- Mòdul Fet: [Analog to PWM (Amazon ~24€)](www.amazon.es/dp/B07WFBCNWM)
+- Xip: ATtiny (o un atmega328p mateix)
+- Tot discret
+	- Comparador + generador de senyal triangular (1 positiu i 1 negatiu)-> PWM
+	- Circuit de potència L298N / Mosfets / IGBT (H-Bridge)
+
+#### Senyal PWM de control a PWM de potència amb control de direcció
+- Mòdul Fet: [L298N DC motor control module (Amazon ~8€)](www.amazon.es/dp/B07DK6Q8F9)
+- Xip: L298N (O un més simple i barat)
+- Tot discret:
+	- Comparador + generador de senyal triangular (sempre positiu)-> PWM
+	- Diode ideal (OpAmp) -> Pin de direcció del L298N
+
+```
+Entrada> ----- |Comparador+Senyal| -------------\				+12V -----\
+			\----- |Buffer| ------- |Interruptor bidireccional| ------- |Mosfets| ---- <Motor
+			   +12V --/\-- -12V 					-12V -----/
+```
