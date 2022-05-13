@@ -2,7 +2,7 @@
 
 Anàlisi de la planta de pràctiques de DS i CA.
 
-[Memòria a Overleaf](https://www.overleaf.com/read/yvxmjhnzsfbc) (Només lectura)
+[Memòria a Overleaf](https://www.overleaf.com/read/zktdpqjvkxcc) (Només lectura)
 
 ## Tests i Punts pendents d'aprofundir-hi
 ### Dinàmica de Sistemes
