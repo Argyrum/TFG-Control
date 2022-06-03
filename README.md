@@ -34,24 +34,19 @@ Anàlisi de la planta de pràctiques de DS i CA.
 	
 9. [ ] Mirar el model de la planta utilitzat a l'app
 	
-10. [ ] Identificar els pols del sistema real
-	- Freq. pròpia
-	- Sobrepuig
-	- Temps d'establiment (Envolvent 98% VF)
-	
 11. [ ] Buscar solució a la zona morta
 	- ~~Control PWM en software~~
 	- ~~Histerèsis / SMC~~
 	- Control PWM en hardware (Veure més a baix)
-		- 11.2 [ ] Triar xip
+		- 11.2 [x] Triar xip
 		- 11.3 [ ] Dissenyar circuit
 		- 11.4 [ ] Verificar
 	
 12. [ ] Buscar solució al derivador
 
 ### Control Automàtic
-1. [ ] Identificar problemes en les pràctiques de CA
-	- Preguntar al professor de laboratori
+1. [x] Identificar problemes en les pràctiques de CA
+	- Mateixos problemes que en CA (Incumplimente de les condicions d'estabilitat, zona morta i no compliment de l'assignació de pols)
 
 ## Problemes base:
 
