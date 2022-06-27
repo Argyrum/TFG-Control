@@ -1,5 +1,5 @@
 %Variables
-tau = 0.255;
+tau = 0.293;
 K = 61; % Resposta OP 2V 45 | OP 3V 50 | trueK 61
 trueK = 61; % rad/s / Vin -> 60,6~61,7
 Kpot = 1.688; % Vpot = -0.04006 + 1.688*angle (angle =/= roda, desplaçat tal que angle 0 a roda 247.5)
