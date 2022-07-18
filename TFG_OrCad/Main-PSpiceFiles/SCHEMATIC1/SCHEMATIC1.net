@@ -1,0 +1,7 @@
+* source MAIN
+R_R3         N14496 N14484  2k TC=0,0 
+R_R4         0 N14496  3k TC=0,0 
+V_V1         N14607 0 1Vdc
+V_V2         N16002 0 12Vdc
+X_U1A         N14607 N14496 N16002 N15436 N14484 TL074/301/TI
+V_V3         0 N15436 12Vdc

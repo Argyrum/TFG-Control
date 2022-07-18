@@ -1,0 +1,207 @@
+
+**** 06/09/22 12:47:50 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+ ** Profile: "Inversor-Main"  [ C:\Users\FactCore\Desktop\TFG_PSpice\main-pspicefiles\inversor\main.sim ] 
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+** Creating circuit file "Main.cir" 
+** WARNING: THIS AUTOMATICALLY GENERATED FILE MAY BE OVERWRITTEN BY SUBSEQUENT SIMULATIONS
+
+*Libraries: 
+* Profile Libraries :
+* Local Libraries :
+* From [PSPICE NETLIST] section of C:\Users\FactCore\AppData\Roaming\SPB_Data\cdssetup\OrCAD_PSpice\17.2.0\PSpice.ini file:
+.lib "nomd.lib" 
+
+*Analysis directives: 
+.TRAN  0 100ms 0 SKIPBP 
+.OPTIONS ADVCONV
+.PROBE64 V(alias(*)) I(alias(*)) W(alias(*)) D(alias(*)) NOISE(alias(*)) 
+.INC "..\Inversor.net" 
+
+
+
+**** INCLUDING Inversor.net ****
+* source MAIN
+U_PWM         STIM(1,1)
++ $G_DPWR $G_DGND
++ N03124 
++ IO_STM
++ IO_LEVEL=0
++  0s 0  
++ repeat forever  
++ +167us 1  
++ +167us 0 
++ endrepeat  
+M_M1         N040710 N03124 N04240 N04240 IRF9140
+M_M2         N04240 N03124 0 0 IRF150
+V_V1         N040710 0 5Vdc
+R_R1         0 N03124  2k TC=0,0 
+
+**** RESUMING Main.cir ****
+.END
+
+
+**** Generated AtoD and DtoA Interfaces ****
+
+*
+* Analog/Digital interface for node N03124
+*
+* Moving U_PWM:OUT1 from analog node N03124 to new digital node N03124$DtoA
+X$N03124_DtoA1
++ N03124$DtoA
++ N03124
++ $G_DPWR
++ $G_DGND
++ DtoA_STM
++       PARAMS: DRVH=   0      DRVL=   0      CAPACITANCE=   0     
+*
+* Analog/Digital interface power supply subcircuits
+*
+X$DIGIFPWR 0 DIGIFPWR
+
+
+**** 06/09/22 12:47:50 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+ ** Profile: "Inversor-Main"  [ C:\Users\FactCore\Desktop\TFG_PSpice\main-pspicefiles\inversor\main.sim ] 
+
+
+ ****     MOSFET MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               IRF9140         IRF150          
+               PMOS            NMOS            
+       LEVEL    3               3            
+           L    2.000000E-06    2.000000E-06 
+           W    1.9              .3          
+         VTO   -3.67            2.831        
+          KP   10.150000E-06   20.530000E-06 
+       GAMMA    0               0            
+         PHI     .6              .6          
+      LAMBDA    0               0            
+          RD     .06066         1.031000E-03 
+          RS     .0706          1.624000E-03 
+          RG     .811          13.89         
+         RDS  444.400000E+03  444.400000E+03 
+          IS   52.230000E-18  194.000000E-18 
+          JS    0               0            
+           N    2                            
+          PB     .8              .8          
+        PBSW     .8              .8          
+         CBD    2.141000E-09    3.229000E-09 
+          CJ    0               0            
+        CJSW    0               0            
+          TT  140.000000E-09  288.000000E-09 
+        CGSO  877.200000E-12    9.027000E-09 
+        CGDO  369.300000E-12    1.679000E-09 
+        CGBO    0               0            
+         TOX  100.000000E-09  100.000000E-09 
+          XJ    0               0            
+          UO  300                            
+       UCRIT   10.000000E+03   10.000000E+03 
+       DELTA    0               0            
+         ETA    0               0            
+      DIOMOD    1               1            
+         VFB    0               0            
+        LETA    0               0            
+        WETA    0               0            
+          U0    0               0            
+        TEMP    0               0            
+         VDD    5               5            
+       XPART    0               0            
+
+
+**** 06/09/22 12:47:50 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+ ** Profile: "Inversor-Main"  [ C:\Users\FactCore\Desktop\TFG_PSpice\main-pspicefiles\inversor\main.sim ] 
+
+
+ ****     Digital Input MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               DINSTM          
+      S0NAME 0               
+       S0TSW  500.000000E-12 
+       S0RLO     .5          
+       S0RHI    1.000000E+03 
+      S1NAME 1               
+       S1TSW  500.000000E-12 
+       S1RLO    1.000000E+03 
+       S1RHI     .5          
+      S2NAME X               
+       S2TSW  500.000000E-12 
+       S2RLO     .429        
+       S2RHI    1.16         
+      S3NAME R               
+       S3TSW  500.000000E-12 
+       S3RLO     .429        
+       S3RHI    1.16         
+      S4NAME F               
+       S4TSW  500.000000E-12 
+       S4RLO     .429        
+       S4RHI    1.16         
+      S5NAME Z               
+       S5TSW  500.000000E-12 
+       S5RLO    1.000000E+06 
+       S5RHI    1.000000E+06 
+
+
+**** 06/09/22 12:47:50 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+ ** Profile: "Inversor-Main"  [ C:\Users\FactCore\Desktop\TFG_PSpice\main-pspicefiles\inversor\main.sim ] 
+
+
+ ****     Digital IO  MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               IO_STM          
+        DRVL    0            
+        DRVH    0            
+       DtoA1 DtoA_STM        
+       DtoA2 DtoA_STM        
+       DtoA3 DtoA_STM        
+       DtoA4 DtoA_STM        
+       TPWRT  100.000000E+03 
+
+
+
+          JOB CONCLUDED
+
+**** 06/09/22 12:47:50 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+ ** Profile: "Inversor-Main"  [ C:\Users\FactCore\Desktop\TFG_PSpice\main-pspicefiles\inversor\main.sim ] 
+
+
+ ****     JOB STATISTICS SUMMARY
+
+
+******************************************************************************
+
+
+
+  License check-out time            =        2.11
+  Total job time (using Solver 1)   =         .42
+

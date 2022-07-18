@@ -1,0 +1,57 @@
+
+**** 06/08/22 23:58:52 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+ ** Profile: "SCHEMATIC2-DCSweep"  [ C:\Users\FactCore\Desktop\TFG_PSpice\Main-PSpiceFiles\SCHEMATIC2\DCSweep.sim ] 
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+** Creating circuit file "DCSweep.cir" 
+** WARNING: THIS AUTOMATICALLY GENERATED FILE MAY BE OVERWRITTEN BY SUBSEQUENT SIMULATIONS
+
+*Libraries: 
+* Profile Libraries :
+* Local Libraries :
+* From [PSPICE NETLIST] section of C:\Users\FactCore\AppData\Roaming\SPB_Data\cdssetup\OrCAD_PSpice\17.2.0\PSpice.ini file:
+.lib "nomd.lib" 
+
+*Analysis directives: 
+.DC LIN V_V1 -5 5 0.1 
+.OPTIONS ADVCONV
+.PROBE64 V(alias(*)) I(alias(*)) W(alias(*)) D(alias(*)) NOISE(alias(*)) 
+.INC "..\SCHEMATIC2.net" 
+
+
+
+**** INCLUDING SCHEMATIC2.net ****
+* source MAIN
+R_R1         N00277 N00172  5k TC=0,0 
+X_U1A         N00172 N00477 VCC+ VCC- N00494 TL074/301/TI
+R_R2         N00172 N00281  5k TC=0,0 
+V_V1         N00277 0 0Vdc
+V_V2         N00281 0 5Vdc
+V_V3         VCC+ 0 12Vdc
+V_V4         0 VCC- 12Vdc
+R_R3         N00477 N00494  5k TC=0,0 
+R_R4         0 N00477  5k TC=0,0 
+X_U1B         0 N01332 VCC+ VCC- N01324 TL074/301/TI
+X_U1C         N00494 N01289 VCC+ VCC- N01274 TL074/301/TI
+R_R5         N01324 N02210  5k TC=0,0 
+R_R6         N01274 N02206  5k TC=0,0 
+R_R7         N00494 N01332  5k TC=0,0 
+R_R8         N01332 N01324  5k TC=0,0 
+R_R9         N01289 N01274  5k TC=0,0 
+
+**** RESUMING DCSweep.cir ****
+.END
+
+ERROR(ORPSIM-15141): Less than 2 connections at node N02210.
+
+ERROR(ORPSIM-15141): Less than 2 connections at node N02206.
+

@@ -1,0 +1,3 @@
+Ni la consigna ni la Kp sembla afectar la descompensació de les masses en estacionari <- No hi ha suficient CdT en estacionari?
+La consigna afecta a la duració del transitori de masses i el valor de pic <- Valor de pic té sentit, pero la duració? Te algo a veure amb condensadors? (+V -> +E enmmagatzemada -> +t de càrrega?)
+La Kp afecta al valor de pic del transitori de masses <- Té sentit

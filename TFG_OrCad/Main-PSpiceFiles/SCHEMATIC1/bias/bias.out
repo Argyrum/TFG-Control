@@ -1,0 +1,59 @@
+
+**** 06/08/22 16:06:19 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+ ** Profile: "SCHEMATIC1-DCSweep"  [ C:\Users\FactCore\Desktop\TFG_PSpice\main-pspicefiles\schematic1\DCSweep.sim ] 
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+** Creating circuit file "DCSweep.cir" 
+** WARNING: THIS AUTOMATICALLY GENERATED FILE MAY BE OVERWRITTEN BY SUBSEQUENT SIMULATIONS
+
+*Libraries: 
+* Profile Libraries :
+* Local Libraries :
+* From [PSPICE NETLIST] section of C:\Users\FactCore\AppData\Roaming\SPB_Data\cdssetup\OrCAD_PSpice\17.2.0\PSpice.ini file:
+.lib "nomd.lib" 
+
+*Analysis directives: 
+.DC LIN V_V1 0 3 0.1 
+.OPTIONS ADVCONV
+.PROBE64 V(alias(*)) I(alias(*)) W(alias(*)) D(alias(*)) NOISE(alias(*)) 
+.INC "..\SCHEMATIC1.net" 
+
+
+
+**** INCLUDING SCHEMATIC1.net ****
+* source MAIN
+E_U1         N14484 0 VALUE {LIMIT(V(N14607,N14496)*1E6,-15V,+15V)}
+R_R3         N14496 N14484  3k TC=0,0 
+R_R4         0 N14496  2k TC=0,0 
+V_V1         N14607 0 0Vdc
+
+**** RESUMING DCSweep.cir ****
+.END
+
+
+          JOB CONCLUDED
+
+**** 06/08/22 16:06:19 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+ ** Profile: "SCHEMATIC1-DCSweep"  [ C:\Users\FactCore\Desktop\TFG_PSpice\main-pspicefiles\schematic1\DCSweep.sim ] 
+
+
+ ****     JOB STATISTICS SUMMARY
+
+
+******************************************************************************
+
+
+
+  License check-out time            =         .72
+  Total job time (using Solver 1)   =         .02
+

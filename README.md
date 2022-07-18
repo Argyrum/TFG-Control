@@ -20,8 +20,8 @@ Anàlisi de la planta de pràctiques de DS i CA.
 	
 5. [x] Analitzar la qualitat del ADC de l'arduino
 	
-6. [ ] Comparar amb els dispositius antics
-	- [ ] Planta nova vs antiga
+6. [x] Comparar amb els dispositius antics
+	- [x] Planta nova vs antiga
 	- [ ] Arduino vs targeta d'adquisició
 	
 7. [x] Identificar el filtre
@@ -32,21 +32,27 @@ Anàlisi de la planta de pràctiques de DS i CA.
 	- [x] Bode empíric
 	- [x] Teòric a partir del model elèctric
 	
-9. [ ] Mirar el model de la planta utilitzat a l'app
-	
-11. [ ] Buscar solució a la zona morta
-	- ~~Control PWM en software~~
-	- ~~Histerèsis / SMC~~
-	- Control PWM en hardware (Veure més a baix)
-		- 11.2 [x] Triar xip
-		- 11.3 [ ] Dissenyar circuit
-		- 11.4 [ ] Verificar
-	
-12. [ ] Buscar solució al derivador
+10. [x] Buscar solució a la zona morta
+	[ ] ~~Control PWM en software~~
+	[ ] ~~Histerèsis / SMC~~
+	[x] Control PWM en hardware (Veure més a baix)
+
+11. [x] Dissenyar driver en modulació PWM
+	- 11.2 [x] Triar xip
+	- 11.3 [x] Dissenyar circuit
+	- 11.4 [x] Verificar -> (No funciona)
+
+12. [ ] Buscar una solució alternativa (En un futur)
+
+13. [ ] Buscar solució al derivador (En un futur)
+
+14. [ ] Determinar causa de les variacions de tau (En un futur)
 
 ### Control Automàtic
 1. [x] Identificar problemes en les pràctiques de CA
 	- Mateixos problemes que en CA (Incumplimente de les condicions d'estabilitat, zona morta i no compliment de l'assignació de pols)
+	
+2. Solució compartida amb DS
 
 ## Problemes base:
 
@@ -57,29 +63,8 @@ Anàlisi de la planta de pràctiques de DS i CA.
 
 ## Problemes addicionals:
 
-1. DS | En els moviments sobtats (Per exm: Canvi de posició objectiu) les masses del motor i del controlador es descompensen.
-2. DS | Control de posició (constant) amb consigna 2V amb controlador P, si es destorba manualment, presenta histeresi en tots dos sentits (0,5V per sobre i 0,35V per sota)
-3. DS | (Cal aprofundir-hi) El filtre introdueix un desfasament
-4. DS | Nota: El guany del derivador és molt petit a la zona de treball, possible motiu del soroll desproporcionat
-4. DS | Els BJT del sistema (TIP 121, 126) no són adients per al control PWM, tenen característiques pobres a f>10. (BJT -> IGBT?)
-
-## Idees per al control PWM
-#### Senyal analògic a PWM amb control de direcció
-- Mòdul Fet: [Analog to PWM (Amazon ~24€)](www.amazon.es/dp/B07WFBCNWM)
-- Xip: ATtiny (o un atmega328p mateix)
-- Tot discret
-	- Comparador + generador de senyal triangular (1 positiu i 1 negatiu)-> PWM
-	- Circuit de potència L298N / Mosfets / IGBT (H-Bridge)
-
-#### Senyal PWM de control a PWM de potència amb control de direcció
-- Mòdul Fet: [L298N DC motor control module (Amazon ~8€)](www.amazon.es/dp/B07DK6Q8F9)
-- Xip: L298N (O un més simple i barat)
-- Tot discret:
-	- Comparador + generador de senyal triangular (sempre positiu)-> PWM
-	- Diode ideal (OpAmp) -> Pin de direcció del L298N
-
-```
-Entrada> ----- |Comparador+Senyal| -------------\				+12V -----\
-			\----- |Buffer| ------- |Interruptor bidireccional| ------- |Mosfets| ---- <Motor
-			   +12V --/\-- -12V 					-12V -----/
-```
+1. DS | En els moviments sobtats (Per exm: Canvi de posició objectiu) les masses del motor i del controlador es descompensen. - Arreglat
+2. DS/CA | Control de posició (constant) amb consigna 2V amb controlador P, si es destorba manualment, presenta histeresi asimètrica (~0,5V per sobre i ~0,35V per sota)
+3. DS | El filtre introdueix un desfasament - Negligible
+4. DS/CA | Els transistors del sistema (TIP 121, 126) no són adients per al control PWM, tenen característiques pobres a f>10. Possible sobrecalentament.
+5. DS/CA | La tau calculada no és constant, varia directament proporciona a l'amplitud de la consigna i segons el punt de càlcul essent les taus caluclades a partir de 95% sempre majors que les de 63%.

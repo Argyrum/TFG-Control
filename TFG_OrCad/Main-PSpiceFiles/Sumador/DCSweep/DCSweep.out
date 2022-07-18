@@ -1,0 +1,100 @@
+
+**** 06/09/22 12:02:13 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+ ** Profile: "Sumador-DCSweep"  [ C:\Users\FactCore\Desktop\TFG_PSpice\main-pspicefiles\sumador\dcsweep.sim ] 
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+** Creating circuit file "DCSweep.cir" 
+** WARNING: THIS AUTOMATICALLY GENERATED FILE MAY BE OVERWRITTEN BY SUBSEQUENT SIMULATIONS
+
+*Libraries: 
+* Profile Libraries :
+* Local Libraries :
+* From [PSPICE NETLIST] section of C:\Users\FactCore\AppData\Roaming\SPB_Data\cdssetup\OrCAD_PSpice\17.2.0\PSpice.ini file:
+.lib "nomd.lib" 
+
+*Analysis directives: 
+.DC LIN V_V1 -5 5 0.1 
+.OPTIONS ADVCONV
+.PROBE64 V(alias(*)) I(alias(*)) W(alias(*)) D(alias(*)) NOISE(alias(*)) 
+.INC "..\Sumador.net" 
+
+
+
+**** INCLUDING Sumador.net ****
+* source MAIN
+R_R1         N00277 N00172  5k TC=0,0 
+X_U1A         N00172 N00477 VCC+ VCC- N00494 TL074/301/TI
+R_R2         N00172 N00281  5k TC=0,0 
+V_V1         N00277 0 0Vdc
+V_V2         N00281 0 5Vdc
+V_V4         0 VCC- 12Vdc
+R_R3         N00477 N00494  5k TC=0,0 
+R_R4         0 N00477  5k TC=0,0 
+V_V3         VCC+ 0 12Vdc
+
+**** RESUMING DCSweep.cir ****
+.END
+
+**** 06/09/22 12:02:13 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+ ** Profile: "Sumador-DCSweep"  [ C:\Users\FactCore\Desktop\TFG_PSpice\main-pspicefiles\sumador\dcsweep.sim ] 
+
+
+ ****     Diode MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               X_U1A.DX        
+          IS  800.000000E-18 
+
+
+**** 06/09/22 12:02:13 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+ ** Profile: "Sumador-DCSweep"  [ C:\Users\FactCore\Desktop\TFG_PSpice\main-pspicefiles\sumador\dcsweep.sim ] 
+
+
+ ****     Junction FET MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               X_U1A.JX        
+               PJF             
+         VTO   -1            
+        BETA  270.100000E-06 
+          IS   15.000000E-12 
+
+
+
+          JOB CONCLUDED
+
+**** 06/09/22 12:02:13 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+ ** Profile: "Sumador-DCSweep"  [ C:\Users\FactCore\Desktop\TFG_PSpice\main-pspicefiles\sumador\dcsweep.sim ] 
+
+
+ ****     JOB STATISTICS SUMMARY
+
+
+******************************************************************************
+
+
+
+  Total job time (using Solver 1)   =         .11
+

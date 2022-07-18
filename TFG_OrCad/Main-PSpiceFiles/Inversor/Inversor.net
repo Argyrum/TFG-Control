@@ -1,0 +1,15 @@
+* source MAIN
+U_PWM         STIM(1,1)
++ $G_DPWR $G_DGND
++ N03124 
++ IO_STM
++ IO_LEVEL=0
++  0s 0  
++ repeat forever  
++ +167us 1  
++ +167us 0 
++ endrepeat  
+M_M1         N040710 N03124 N04240 N04240 IRF9140
+M_M2         N04240 N03124 0 0 IRF150
+V_V1         N040710 0 5Vdc
+R_R1         0 N03124  2k TC=0,0 
